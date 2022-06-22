@@ -1,0 +1,82 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<br>
+<div class='bx'>
+{%for post in con.articles|slice:':8'%}
+<div class='insize plusF blac'>
+{{post.title}}
+</div>
+<div class='desize passive'>{{post.publishedAt}}</div>
+{%if post.urlToImage%}
+<p><img class='box-border' style='border:none;' src='{{post.urlToImage}}' width='100%' height=auto /></p>
+{%endif%}
+{%if post.content%}
+<p style='text-align:justify'>{{post.content|truncatewords:50 }}</p>
+{%endif%}
+<p class='passive center' style='colr:red;word-spcing:1cm'>
+<a onclick='count()' style='background-color:navy;color:white;width:100%;border-radius:5px;border:2px solid navy;padding:3px'href='{{post.url}}' target='_blank' class='normal'>
+Read Full Stories </a>
+</p>
+<hr>
+
+
+<br>
+{%endfor%}
+
+
+<div class='mesize bold'>Top Headlines</div>
+<div class='d-flex flex-flow' style='background-color:white;gap:10px'>
+{%for post in con.articles %}
+{%if post.urlToImage%}
+<a class='normal' href='{{post.url}}' target='_blank' style='text-decoration:none;background-color:white;'>
+
+<img class='box-border' style='border:None;padding:0px' height=120px width=auto src='{{post.urlToImage}}'>
+
+<div class='mesize scol center pclor'><span class='passive'></span>{{post.title|truncatewords:8}}</div>
+<div class='mesize scol center pclor'><span class='passive'></span>{{pos.author}}</div>
+
+
+<p class='desize'><span class='passive'></span>{{content.Artist}}</p>
+</a>
+{%endif%}
+{%endfor%}
+</div>
+<br>
+<div>
+
+
+{%for post in con.articles|slice:'8:16'%}
+<div class='insize plusF blac'>
+{{post.title}}
+</div>
+<div class='desize passive'>{{post.publishedAt}}</div>
+{%if post.urlToImage%}
+<p><img class='box-border' style='border:none;' src='{{post.urlToImage}}' width='100%' height=auto /></p>
+{%endif%}
+{%if post.content%}
+<p style='text-align:justify'>{{post.content|truncatewords:50 }}</p>
+{%endif%}
+<p class='passive' style='colr:red;word-spcing:1cm'>
+<p class='passive center' style='colr:red;word-spcing:1cm'>
+<a onclick='count()' style='background-color:navy;color:white;width:100%;border-radius:5px;border:2px solid navy;padding:3px'href='{{post.url}}' target='_blank' class='normal'>
+Read Full Stories </a>
+</p>
+
+
+<br>
+{%endfor%}
+</div>
+
+</div>
+
+
+
+
+
+{%endblock content%}
+{% if post.Image is not None %}
+<p class='mesize box-border' style='width:5cm;height:5cm;background-color:red;background-image:url({{post.Image.url}});background-size:400%;background-repeat:no-repeat; background-object-fit:fit;color:white;padding:2px;'>{{post.head}}</p>
+{%endif%}
+<span style='color:white'>space space </span><i class='fas fa-comment'></i>{{post.comments.count}} <span style='color:white'>space</span> 
+<i class='fas fa-eye'></i> <b value='0' id='view'>0{{post.Views}}</b>

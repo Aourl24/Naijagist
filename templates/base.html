@@ -1,0 +1,76 @@
+{%load static%}
+<html>
+<head>
+<meta name='viewport' content='width=device-width initial-scale=1 maximum-scale=1'>
+
+<title>NaijaGISTt</title>
+<link rel='stylesheet' type='text/css' href="{%static 'css/blogC.css'%}" >
+<link rel='stylesheet' href='{%static 'css/bootstrap/bootstrap.min.css'%}' >
+<link rel='stylesheet' href="{%static 'css/fontawesome_5/css/all.min.css'%}" >
+</head>
+
+<body>
+
+<h1 class='sclor centr' style='backgrond:navy;color:navy;padding:3px'><i class='fas fa-blog' style='color:red'></i>  Naija-Gist
+<span class='left'></h1>
+{%comment%}
+<div class='sub'><button name='buto'><a name='buto' href=''>Login</a>
+<button name='buto'><a  name='buto' href='http:/signup/'>SignUp</a></div>
+{%endcomment%}
+
+
+<div class='navbar sticky-top' style='background:navy;font-size:18px;width:105%;color:white;margin-left:-10'>
+<a class='navtabs' name='lk' style='color:white; a:visited:color:red' href='{%url 'home' %}'><i class='fas fa-home'></i> Home</a>|
+<a class='navtabs' style='color:white;' href='{%url 'ent' %}'> <i class='fas fa-music'></i>  Entertainment</a>|
+<a class='navtabs' style='color:white;' href='{%url 'sport' %}'> <i class='fas fa-football-ball'></i>  Sports</a>|
+<a class='navtabs' style='color:white;' href='{%url 'politics' %}'> <i class='fas fa-book'></i>  Politics</a>|
+
+</div>
+{%comment%}
+<div id='pop' class='pop' style='background:white;position:fixed;margin-left:30px'>
+<p class='mesize'>We use cookies to Improve User Experience</p>
+<button class='input white' onclick="close()" style='color:white'>Accept Cookies</button></div>
+{%endcomment%}
+<div class='container'>
+
+{%block content%}
+{%endblock content%}
+</div>
+
+<div class='footer center' style='padding:5px;margin-left:-10px;width:105%'>
+
+                    <p class="small text-muted"> NaijaGIST is a home for News around Nigeria and the World</p>
+                    
+                    
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="{%url 'home'%}">Home</a></li>
+                        <li><a href="{%url 'ent'%}">Entertainment</a></li>
+                        <li><a href= "{%url 'politics'%}">Politics</a></li>
+                        <li><a href= "{%url 'sport'%}">Sport</a></li>
+                    </ul>
+                
+                
+                
+                <div>
+                    <p class='passive'><i class='fab fa-facebook'></i> @naijaGIST &nbsp&nbsp
+                    <i class='fab fa-twitter'></i> @naijaGIST &nbsp&nbsp
+                    <i class='fab fa-instagram'></i> @naijaGIST</p>
+                  
+                    <p class="small text-muted">This website is a property of NaijaGist any Copyrights will be subject to Crime</p>
+                    <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Aourl.com</a></p>
+     
+                    
+                </div>
+            </div>
+       
+
+<div class='bottom-side white' >
+<a href='#' class='' style='color:white;font-size:24px'><i class='fas fa-arrow-up'></i></a>
+</div>
+
+
+
+<script src="{%static 'js/pop.js' %}" ></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<style type='text/css'>
+div.header {
+  margin: -20px -20px 21px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: green;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+</style>
+<div class='content'>
+<h2>Login</h2>
+{% block content%}
+<div class="login">
+<div class='header'>
+  <h1>Login to NaijaGist</h1></div>
+  <form method="post" action="http:/home/">
+  {%csrf_token%}
+  {{login}}
+    <p><div class="submit"><input type="submit" name="commit" value="Login" style='width=200px'> </div></p>
+  </form>
+</div>
+
+<div class="login-help">
+  <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
+</div>
+</div>
+{%endblock content%}

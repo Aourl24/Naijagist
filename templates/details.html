@@ -1,0 +1,38 @@
+{%extends 'base.html' %}
+{%load static%}
+{%block content%}
+<br>
+<div class='insize plusF'>
+{{post.head}}
+</div>
+
+<p class='passive bold'>{{post.Date}}</p>
+{%if post.Image%}
+<img class='box-border' style='border:none'src='{{post.Image.url}}' width=100% height=auto >
+{%endif%}
+<p class='bo' style='text-alig:justify'>
+{{post.Post|slice:':1200'}}
+<br>
+{%for img in post.post.all %}
+{%if img.image %}
+<img class='box-border' style='pading:1px;border:none' src='{{img.image.url}}' width=100% height=auto >
+<div class='desize passive'>{{img.description}}</div>
+<br>
+{%endif%}
+{%endfor%}
+
+{{post.Post|slice:'1200:'}}</p>
+<hr>
+<br>
+<p><div class='insize'>Comments</div></p>
+{%for comment in post.comments.all%}
+<p>{{comment.body}} - <b class='desize passive'>{{comment.name}}</b></p>
+<hr>
+{%endfor%}
+<form method='post' style='display:block' class='form'>
+{%csrf_token%}
+{{form.as_p}}
+<button class='button'>Submit</button>
+</form>
+
+{%endblock content%}

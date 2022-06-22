@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<br>
+<h3><u>Bussiness News</u></h3>
+<br>
+<div class='bx'>
+{%for post in con.articles|slice:':15'%}
+<div class='insize plusF blac'>
+{{post.title}}
+</div>
+<div class='desize passive'>{{post.publishedAt}}</div>
+{%if post.urlToImage%}
+<p><img class='box-border' style='border:none;' src='{{post.urlToImage}}' width='100%' height=auto /></p>
+{%endif%}
+{%if post.content%}
+<p style='text-align:justify'>{{post.content|truncatewords:50 }}</p>
+{%endif%}
+<p class='passive center' style='colr:red;word-spcing:1cm'>
+<a onclick='count()' style='background-color:navy;color:white;width:100%;border-radius:5px;border:2px solid navy;padding:3px'href='{{post.url}}' target='_blank' class='normal'>
+Read Full Stories </a>
+</p>
+<hr>
+{%endfor%}
+
+{%endblock content%}

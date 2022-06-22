@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h3>Administrations</h3>
+<div class='login'>
+<h1> Create Contents</h1>
+<form method='post' action='/home/'>
+{%csrf_token%}
+{{form.as_p}}
+<p>
+<input type='submit' vaue='submit'></p>
+</form>
+</div>
+
+{%endblock content%}
